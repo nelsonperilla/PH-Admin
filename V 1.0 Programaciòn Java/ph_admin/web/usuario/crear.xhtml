@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Clave:" for="clave" />
+                <h:inputText id="clave" value="#{controladorUsuarios.us.clave}" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Correo:" for="correo" />
+                <h:inputText id="correo" value="#{controladorUsuarios.us.correo}" title="" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Nombres:" for="nombres" />
+                <h:inputText id="nombres" value="#{controladorUsuarios.us.nombres}" title="" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Apellidos:" for="apellidos" />
+                <h:inputText id="apellidos" value="#{controladorUsuarios.us.apellidos}" title="" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Direcciòn:" for="direccion" />
+                <h:inputText id="direccion" value="#{controladorUsuarios.us.direccion}" title="" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Numero de Celular:" for="numeroCelular" />
+                <h:inputText id="numeroCelular" value="#{controladorUsuarios.us.numeroCelular}" title="" required="true" requiredMessage="" tabindex=""/>
+                <h:outputLabel value="Numero Fijo:" for="numeroFijo" />
+                <h:inputText id="numeroFijo" value="#{controladorUsuarios.us.numeroFijo}" title="" />
+                <h:outputLabel value="Numero de documento:" for="numeroDocumento" />
+                <h:inputText id="numeroDocumento" value="#{controladorUsuarios.us.numeroDocumento}" title="" required="true" requiredMessage=""/>
+                <h:outputLabel value="Tipo de documento:" for="tipoDocumento" />
+                <h:inputText id="tipoDocumento" value="#{controladorUsuarios.us.tipoDocumento}" title="" required="true" requiredMessage=""/>
+                <h:outputLabel value="Estado de usuario:" for="estadoUsuario" />
+                <h:inputText id="estadoUsuario" value="#{controladorUsuarios.us.estadoUsuario}" title="" required="true" requiredMessage=""/>
+                <h:outputLabel value="Fecha de ingreso:" for="fechaIngreso" />
+                <h:inputText id="fechaIngreso" value="#{controladorUsuarios.us.fechaIngreso}" title="" required="true" requiredMessage="">
+                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                </h:inputText>
+                <h:outputLabel value="Fecha de salida:" for="fechaSalida" />
+                <h:inputText id="fechaSalida" value="#{controladorUsuarios.us.fechaSalida}" title="" required="true" requiredMessage="">
+                    <f:convertDateTime pattern="MM/dd/yyyy" />
+                </h:inputText>
+
+            </h:panelGrid>
+            <br />
+            <h:commandButton value="Registrar" action="#{controladorUsuarios.add()}"></h:commandButton>
+
+        </h:form>
+
+    </h:body>
+</html>
+

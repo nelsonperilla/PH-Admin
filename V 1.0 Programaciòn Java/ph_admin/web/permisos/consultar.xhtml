@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+         <h:form>
+            <h:link value="Adicionar nuevo usuario" outcome="crear"></h:link>
+            <h:dataTable var="per" value="#{controladorPermisos.findAll()}" border="1" cellspacing="2" cellpadding="2">
+                <h:column>
+                    <f:facet name="header">Codigo:</f:facet>
+                    <h:outputText value="#{per.codigo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Descripción:</f:facet>
+                    <h:outputText value="#{per.descripcion}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Estado:</f:facet>
+                    <h:outputText value="#{per.estado}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Opcion</f:facet>
+                    <h:commandLink value="Eliminar" action="#{controladorPermisos.delete(per)}" onclick="return confirm('Registro eliminado')"></h:commandLink>|
+                    <h:commandLink value="Editar" action="#{controladorPermisos.edit(per)}"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        
+    </h:body>
+</html>
+

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:link value="Adicionar nuevo usuario" outcome="crear"></h:link>
+            <h:dataTable var="us" value="#{controladorUsuarios.findAll()}" border="1" cellspacing="2" cellpadding="2">
+                <h:column>
+                    <f:facet name="header">Clave:</f:facet>
+                    <h:outputText value="#{us.clave}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Correo:</f:facet>
+                    <h:outputText value="#{us.correo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombres:</f:facet>
+                    <h:outputText value="#{us.nombres}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellidos:</f:facet>
+                    <h:outputText value="#{us.apellidos}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Dirección:</f:facet>
+                    <h:outputText value="#{us.direccion}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero de celular:</f:facet>
+                    <h:outputText value="#{us.numeroCelular}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero fijo:</f:facet>
+                    <h:outputText value="#{us.numeroFijo}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Numero de documento:</f:facet>
+                    <h:outputText value="#{us.numeroDocumento}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Tipo de documento:</f:facet>
+                    <h:outputText value="#{us.tipoDocumento}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Codigo del rol:</f:facet>
+                    <h:outputText value="#{us.codigoRol}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Codigo de usuario:</f:facet>
+                    <h:outputText value="#{us.codigoUsuario}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Estado de usuario:</f:facet>
+                    <h:outputText value="#{us.estadoUsuario}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Fecha de ingreso:</f:facet>
+                    <h:outputText value="#{us.fechaIngreso}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Fecha de salida:</f:facet>
+                    <h:outputText value="#{us.fechaSalida}"></h:outputText>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Opcion</f:facet>
+                    <h:commandLink value="Eliminar" action="#{controladorUsuarios.delete(usu)}" onclick="return confirm('Registro eliminado')"></h:commandLink>|
+                    <h:commandLink value="Editar" action="#{controladorUsuarios.edit(usu)}"></h:commandLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+    </h:body>
+</html>
+
